@@ -41,7 +41,11 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rails-flog', require: 'flog'
   gem 'rspec-rails', '~> 3.8'
+  gem 'sqlite3'
+end
 
+group :production do
+  gem 'pg', '0.20.0'
 end
 
 group :development do
