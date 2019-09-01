@@ -2,7 +2,7 @@
 
 
 <div class="d-flex align-items-center">
-  <h1>掲示板一覧</h1>
+  <h1>Spot Map</h1>
   <div class="ml-auto boards__linkBox">
      <%= form_with url: boards_path, method: :get, class: 'boards__searchForm' do %>
       <%= select_tag :tag_id,
@@ -14,13 +14,13 @@
                      }
       %>
     <% end %>
-    <a href="/boards/new" class="btn btn-outline-dark">new</a>
+    <a href="/boards/new" class="btn btn-outline-light">新規作成</a>
   </div>
 </div>
 <% if flash[:notice] %>
   <div class="alert alert-danger"><%= flash[:notice] %></div>
 <% end %>
-<table class="table table-hover boards__table">
+<table class="table table-hover boards_table">
   <thead class="thead-dark">
     <tr>
       <th>ID</th>
@@ -28,6 +28,7 @@
       <th>作成者</th>
       <th>作成日時</th>
       <th>更新日時</th>
+      <th></th>
       <th></th>
     </tr>
   </thead>
@@ -39,8 +40,8 @@
         <td><%= board.name %></td>
         <td><%= board.created_at.to_s(:datetime_jp) %></td>
         <td><%= board.updated_at.to_s(:datetime_jp) %></td>
-        <td><%= link_to 'detail', board, class: 'btn btn-outline-dark' %></td>
-        <td><%= link_to 'delete', board, class: 'btn btn-outline-dark', method: :delete %></td>
+        <td><%= link_to '詳細', board, class: 'btn btn-outline-light' %></td>
+        <td><%= link_to '削除', board, class: 'btn btn-outline-light', method: :delete %></td>
       </tr>
     <% end %>
   </tbody>

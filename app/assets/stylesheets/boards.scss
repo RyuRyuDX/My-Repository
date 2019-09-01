@@ -1,3 +1,7 @@
+body {
+  color: white;
+}
+
 .borads_table {
   tr:hover {
     cursor: pointer;
@@ -15,4 +19,13 @@
 .boards__select {
   display: inline-block;
   width: auto;
+}
+
+.container h1 {
+  color: white;
+  font-size: 3rem;
+}
+
+.form-group label {
+  color: white;
 }
